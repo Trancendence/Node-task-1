@@ -9,7 +9,7 @@
     "start:dev": "nodemon index"
   },
   "repository": {
-    "type": "git",
+    "type": "module",
     "url": "git+https://github.com/Trancendence/Node-task-1.git"
   },
   "keywords": [],
