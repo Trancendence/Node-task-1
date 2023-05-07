@@ -1,16 +1,16 @@
 // Import
 const fs = require("fs/promises");
 const path = require("node:path");
-const contactsPath = path.join(__dirname, "contacts.json");
+const contactsPath = path.join(__dirname, "db/contacts.json");
 
 const getContacts = async () => {
-  const contact = await fs.readFile(contactsPath, "utf-8");
-  return JSON.parse(contacts);
+  const contact = await fs.readFile(contactsPath);
+  return JSON.parse(contact);
 };
 
 // TODO: задокументировать каждую функцию
 function listContacts() {
-    // ...твой код
+  
   }
   
   function getContactById(contactId) {
