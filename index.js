@@ -11,25 +11,20 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
         case "list":
             const allContact = await data.getContacts();
             return console.log(allContact);
-            break;
             // Get
         case "get":
             const oneContact = await data.getContactById(id);
             return console.log(oneContact);
-            break;
             // Add
         case "add":
             const addContact = await data.addContact({name, email, phone});
             return console.log(addContact);
-            break;
             // Remove
         case "remove":
             const removeContact = await data.removeContact(id);
             return console.log(removeContact);
-            break;
         default:
             console.log("Unknown action");
-            break;
     }
 };
 
