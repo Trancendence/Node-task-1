@@ -9,7 +9,7 @@ Author: Baidin Denys ([Telegram](https://t.me/Trancendance), [Linkedin](https://
 3. HTML
 
 
-![Receive contact list](https://prnt.sc/WRP2FePZ14TO)
-![Receive a contact by id](https://prnt.sc/-ZXJQIbEBiwm)
-![Add new contact](https://prnt.sc/sOP53IvCwHsa)
-![Remove a contact by id](https://prnt.sc/_BvJ6HYEse4J)
+Receive contact list https://prnt.sc/WRP2FePZ14TO
+Receive a contact by id https://prnt.sc/-ZXJQIbEBiwm
+Add new contact https://prnt.sc/sOP53IvCwHsa
+Remove a contact by id https://prnt.sc/_BvJ6HYEse4J
