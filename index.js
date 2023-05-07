@@ -14,6 +14,9 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
         case "add":
             const addContact = await data.addContact({name, email, phone});
             return console.log(addContact);
+        case "remove":
+            const removeContact = await data.removeContact(id);
+            return console.log(removeContact);
         default:
             console.log("Unknown action");
     }
@@ -21,5 +24,5 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
 
 // invokeAction({action: "list"});
 // invokeAction({action: "get", id:"AeHIrLTr6JkxGE6SN-0Rw"});
-invokeAction({action: "add", name: "Allen Raymond", email: "nulla.ante@vestibul.co.uk", phone: "(992) 914-3792"});
-// invokeAction({action: "get", id:"AeHIrLTr6JkxGE6SN-0Rw"});
+// invokeAction({action: "add", name: "Allen Raymond", email: "nulla.ante@vestibul.co.uk", phone: "(992) 914-3792"});
+invokeAction({action: "remove", id: "AeHIrLTr6JkxGE6SN-0Rw"});
