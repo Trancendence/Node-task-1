@@ -3,20 +3,23 @@
 // const contacts = fs.require("./db");
 const data = require("./contacts")
 
-const dataContacts = async ({ action, id, name, email, phone }) => {
+const invokeAction = async ({ action, id, name, email, phone }) => {
     switch (action) {
-        case "listContacts":
+        case "list":
             const allContact = await data.getContacts();
             return console.log(allContact);
-        case "getContactById":
-            const oneContact = await data.getContactsById(id);
+        case "get":
+            const oneContact = await data.getContactById(id);
             return console.log(oneContact);
-        case "addContact":
-            const addContact = await data.addContact;
+        case "add":
+            const addContact = await data.addContact({name, email, phone});
             return console.log(addContact);
         default:
             console.log("Unknown action");
     }
 };
 
-dataContacts({action: "listContacts"});
+// invokeAction({action: "list"});
+// invokeAction({action: "get", id:"AeHIrLTr6JkxGE6SN-0Rw"});
+invokeAction({action: "add", name: "Allen Raymond", email: "nulla.ante@vestibul.co.uk", phone: "(992) 914-3792"});
+// invokeAction({action: "get", id:"AeHIrLTr6JkxGE6SN-0Rw"});
