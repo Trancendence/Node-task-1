@@ -1,28 +1,39 @@
 // Import
-// const fs = require("fs/promises");
-// const contacts = fs.require("./db");
-const data = require("./contacts")
+const data = require("./contacts");
+const yargs = require("yargs");
+const {hideBin} = require("yargs/helpers");
+
+
 
 const invokeAction = async ({ action, id, name, email, phone }) => {
     switch (action) {
+        // List
         case "list":
             const allContact = await data.getContacts();
             return console.log(allContact);
+            break;
+            // Get
         case "get":
             const oneContact = await data.getContactById(id);
             return console.log(oneContact);
+            break;
+            // Add
         case "add":
             const addContact = await data.addContact({name, email, phone});
             return console.log(addContact);
+            break;
+            // Remove
         case "remove":
             const removeContact = await data.removeContact(id);
             return console.log(removeContact);
+            break;
         default:
             console.log("Unknown action");
+            break;
     }
 };
 
-// invokeAction({action: "list"});
-// invokeAction({action: "get", id:"AeHIrLTr6JkxGE6SN-0Rw"});
-// invokeAction({action: "add", name: "Allen Raymond", email: "nulla.ante@vestibul.co.uk", phone: "(992) 914-3792"});
-invokeAction({action: "remove", id: "AeHIrLTr6JkxGE6SN-0Rw"});
+// Yargs
+const arr = hideBin(process.argv);
+const {argv} = yargs(arr);
+invokeAction(argv);
